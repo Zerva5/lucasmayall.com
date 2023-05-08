@@ -1,19 +1,21 @@
 export default function DefaultPage({
   children,
   title,
-  textMargin = true
+  textMargin = true,
 }: {
   children: React.ReactNode;
   title: string;
   textMargin?: boolean;
 }) {
   return (
-    <div className={`flex-1 flex-col flex pageContent my-5 text-xl ${textMargin ? "mx-20" : ""}`}>
-      
-
-      {/* <div className="page-content py-5 text-xl"> */}
-        <h1 className="text-center my-5">{title}</h1>
-        <div className="flex-1">{children}</div>
-    </div>
+      <div
+        className={`text-xl rounded-md h-full flex flex-col ${
+          textMargin ? "mx-21" : ""
+        }`}
+      >
+        {/* <div className="page-content py-5 text-xl"> */}
+        <h1 className="text-center pb-5">{title}</h1>
+        <div className="flex-grow">{children}</div>
+      </div>
   );
 }

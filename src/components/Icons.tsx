@@ -1,5 +1,4 @@
-import { faJs, faPython } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+export const LinkedInColor = "#069"
 
 function GithubIcon() {
   return (
@@ -31,11 +30,14 @@ export function TypeScriptIcon() {
     <img src="typescript_logo.svg"></img>);
 }
 
+type IconDictionaryType = {
+  [key: string]: JSX.Element;
+};
 
-const IconDictionary = {
-  github: <GithubIcon />,
-  linkedin: <LinkedinIcon />,
-  mail: <MailIcon />,
+const IconDictionary: IconDictionaryType =  {
+  github: <img src="icons/github_logo.svg"/>,
+  linkedin: <img src="icons/linkedin_logo.svg"/>,
+  mail: <img src="icons/mail_logo.svg"/>,
   C: <img src="icons/c_logo.svg"/>,
   "C#": <img src="icons/csharp_logo.svg"/>,
   "C++": <img src="icons/cpp_logo.svg"/>,
@@ -48,10 +50,17 @@ const IconDictionary = {
   ReactJS: <img src="icons/react_logo.svg"/>,
   NextJS: <img src="icons/nextjs_logo.svg"/>,
   "Next.js": <img src="icons/nextjs_logo.svg"/>,
-
+  "TailwindCSS": <img src="icons/tailwindcss_logo.svg"/>,
+  "Git": <img src="icons/git_logo.svg"/>,
   HTML: <img src="icons/html_logo.svg"/>,
   CSS: <img src="icons/css_logo.svg"/>,
   Linux: <img src="icons/linux_logo.svg"/>,
+  "Bash": <img src="icons/shellscript_logo.svg"/>,
+  "Shell Scripting": <img src="icons/shellscript_logo.svg"/>,
+  "Shell": <img src="icons/shellscript_logo.svg"/>,
+  "Bash Scripting": <img src="icons/shellscript_logo.svg"/>,
+  "R": <img src="icons/r_logo.svg"/>,
+
 };
 
 export default IconDictionary;

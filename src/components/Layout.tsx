@@ -23,10 +23,10 @@ export default function RootLayout({
       </Head>
 
       <NavigationMenu />
-      <div className="ml-64 justify-center mx-auto bg-primary p-3 min-h-screen h-screen">
-        <main className="flex bg-secondary text-primary rounded-md p-2 min-h-full">
+      <div className="ml-64  bg-primary p-3 min-h-screen flex">
+        <div className=" bg-secondary text-primary rounded-md p-3 flex-grow">
           {children}
-        </main>
+        </div>
       </div>
     </>
   );
