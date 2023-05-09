@@ -13,7 +13,7 @@ export function NavigationMenu() {
     { name: "Home", link: "/" },
     { name: "Resume", link: "/resume" },
     { name: "Projects", link: "/projects" },
-    { name: "Education", link: "/education" },
+    // { name: "Education", link: "/education" },
   ];
 
   return (
