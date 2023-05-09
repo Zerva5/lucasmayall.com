@@ -6,6 +6,18 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontSize: {
+      'xs': '0.75rem',
+      'sm': '0.875rem',
+      'base': '1rem',
+      'lg': '1.5rem',
+      'xl': '1.875rem',
+      '2xl': '2.25rem',
+      '3xl': '3rem',
+      '4xl': '3.75rem',
+      '5xl': '4.5rem',
+      '6xl': '6rem',
+    },
     extend: {
       colors: {
         primary:'#EEEEEE',

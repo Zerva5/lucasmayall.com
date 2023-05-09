@@ -1,5 +1,5 @@
 import React from "react";
-import IconDictionary from "./Icons";
+import ColoredIconDictionary from "./Icons";
 import TechList from "./TechList";
 
 export default function ProjectEntry({
@@ -48,7 +48,7 @@ export default function ProjectEntry({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className=""
+              className="text-text-primary hover:no-underline"
             >
               Learn more
             </a>

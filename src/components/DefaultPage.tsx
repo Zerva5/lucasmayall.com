@@ -9,7 +9,7 @@ export default function DefaultPage({
 }) {
   return (
       <div
-        className={`text-xl rounded-md h-full flex flex-col ${
+        className={`text-lg rounded-md h-full flex flex-col ${
           textMargin ? "mx-21" : ""
         }`}
       >

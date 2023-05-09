@@ -1,4 +1,4 @@
-import IconDictionary from "./Icons";
+import ColoredIconDictionary from "./Icons";
 
 export default function TechList({ technologies }: { technologies: string[] }) {
   // sort technologies alphabetically
@@ -12,7 +12,7 @@ export default function TechList({ technologies }: { technologies: string[] }) {
           key={index}
           title={tech}
         >
-          {IconDictionary[tech]}
+          {ColoredIconDictionary[tech]}
         </div>
       ))}
     </div>
