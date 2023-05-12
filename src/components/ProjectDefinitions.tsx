@@ -22,7 +22,7 @@ const projects = [
           The goal was to build an easy to maintain portfolio website that could
           help me gain experience with ReactJS components, TypeScript, and CI/CD techniques with Github
           Actions. I wanted to get more familiar with TypeScript and ReactJS before diving into fully
-          dynamic web application. At the time of writing this the website is
+          dynamic web applications. At the time of writing this the website is
           focused primarily on my software development experience, but I plan to
           expand it to include my other interests as well.
         </p>
@@ -64,7 +64,7 @@ const projects = [
       </>
     ),
     image: "/150_placeholder.png",
-    link: "",
+    link: "https://github.com/Zerva5/BC-Housing-Starts-Analysis",
     technologies: ["R"],
   },
   {
@@ -81,7 +81,7 @@ const projects = [
       </p>
     ),
     image: "/150_placeholder.png",
-    link: "#",
+    link: "https://github.com/Zerva5/P2P-Encrypted-Chat",
     technologies: ["Python", "Git"],
   },
   {
@@ -104,14 +104,13 @@ const projects = [
         <br />
         <p>
           Our performance target was to surpass 50% accuracy, effectively doing
-          better than a coin flip. Although the paper is pending release and we
-          are hoping improve the model further, we successfully achieved this
-          goal.
+          better than a coin flip. I'm happy to say we surpassed this goal. The paper is pending release as we
+          are hoping improve the model further.
         </p>
       </>
     ),
     image: "/150_placeholder.png",
-    link: "",
+    link: "https://github.com/Zerva5/Classifying-Bug-Inducing-Commits",
     technologies: ["TensorFlow", "Git", "Python", "Shell Scripting"],
   },
   // Add more projects as needed
