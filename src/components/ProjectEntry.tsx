@@ -21,13 +21,13 @@ export default function ProjectEntry({
 }) {
   return (
     <div className={`flex bg-white shadow-md rounded-md p-4 ${index > 0 ? 'mt-4' : ''}`}>
-      <div className="mr-4">
+      {/* <div className="mr-4">
         <img
           className="rounded-lg h-32 w-32 object-cover"
           src={image}
           alt={title}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-col justify-between flex-1 text-text-primary">
         <div className="project-entry-top-container">
@@ -46,7 +46,7 @@ export default function ProjectEntry({
           <div className="justify-center p-2 rounded-md bg-accent ml-auto mt-auto ">
             <a
               href={link}
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
               className="text-text-primary hover:no-underline"
             >
