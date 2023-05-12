@@ -59,9 +59,13 @@ function Home() {
             </p>
           </div>
 
+<div>
           <Image
-            className="rounded-md w-1/2 h-auto object-contain flex-shrink ml-2 shadow-none transition-shadow duration-200 ease-in-out hover:shadow-lg hover:shadow-black/30"
+            className="rounded-md transition-shadow duration-200 ease-in-out hover:shadow-lg hover:shadow-black/30 "
             src={adventurePicture} alt={"Picture of BC landscape"}/>
+
+
+</div>
         </div>
       </ContentBubble>
     </DefaultPage>
