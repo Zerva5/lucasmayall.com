@@ -5,10 +5,10 @@ export default function TechList({ technologies }: { technologies: string[] }) {
   technologies.sort((a, b) => a.localeCompare(b));
 
   return (
-    <div className="tech-icons flex flex-wrap text-4xl">
+    <div className="tech-icons flex flex-column flex-wrap">
       {technologies.map((tech, index) => (
         <div
-          className="tech-icon-container mr-2 mb-0 h-8 w-8 flex justify-center items-center"
+          className="tech-icon-container my-auto mx-1 h-8 w-8 flex "
           key={index}
           title={tech}
         >
