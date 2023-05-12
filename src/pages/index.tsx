@@ -16,9 +16,8 @@ function Home() {
           graduate of the University of Victoria with a combined BSc in Computer
           Science and Statistics. I'm passionate about software development,
           data science, and machine learning. I'm a huge fan of the outdoors and
-          love to go hiking, camping, and rock climbing. I love travelling
-          (especially by motorcycle!) and have gone on a number of moto-camping
-          trips already.
+          love to go hiking, camping, and rock climbing. I love traveling
+          (especially by motorcycle!) and have gone on a number of motorcycle-camping trips already.
         </p>
 
         <br />
@@ -32,8 +31,8 @@ function Home() {
       <ContentBubble title="Projects">
         <p className="">
           During my time at UVic and in my free time I've worked on a number of
-          projects. You can find a list of them on the{" "}
-          <Link href="/projects">projects page</Link> or explore some of them on
+          projects. You can find a list of some of my favorites on the{" "}
+          <Link href="/projects">projects page</Link> or take a deeper dive on
           my <Link href="https://www.github.com/Zerva5">Github</Link>.
         </p>
 
