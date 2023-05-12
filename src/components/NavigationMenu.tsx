@@ -1,9 +1,9 @@
 import Link from "next/link";
 import SocialButton from "./SocialButton";
-import ColoredIconDictionary, { IconDictionary } from "./Icons";
 
 import profilePhoto from "../../public/profile-photo.jpg";
 import Image from "next/image";
+import { Github_icon, LinkedIn_icon, Mail_icon } from "./SvgIcons";
 
 
 
@@ -41,9 +41,9 @@ export function NavigationMenu() {
         </div>
 
         <div className="flex justify-center space-x-4">
-          <SocialButton innerContent={IconDictionary["github"]} link="https://github.com/Zerva5"/>
-          <SocialButton innerContent={IconDictionary["linkedin"]} link="https://www.linkedin.com/in/lucas-mayall/"/>
-          <SocialButton innerContent={IconDictionary["mail"]} link="mailto:lucasmmayall@gmail.com"/>
+          <SocialButton innerContent={<LinkedIn_icon/>} link="https://github.com/Zerva5"/>
+          <SocialButton innerContent={<Github_icon/>} link="https://www.linkedin.com/in/lucas-mayall/"/>
+          <SocialButton innerContent={<Mail_icon/>} link="mailto:lucasmmayall@gmail.com"/>
         </div>
       </nav>
     </>
