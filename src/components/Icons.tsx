@@ -18,7 +18,8 @@ import LinuxLogo from "../../public/logos/linux_logo.svg";
 import ShellScriptLogo from "../../public/logos/shellscript_logo.svg";
 import RLogo from "../../public/logos/r_logo.svg";
 
-import LinkedInIcon from "../../public/icons/linkedin_icon.svg";
+//import LinkedInIcon from "../../public/icons/linkedin_icon.svg";
+import {LinkedIn_icon} from "./SvgIcons";
 import GithubIcon from "../../public/icons/github_icon.svg";
 
 import MailIcon from "../../public/icons/mail_icon.svg";
@@ -31,11 +32,12 @@ type IconDictionaryType = {
   [key: string]: JSX.Element;
 };
 
-export const IconDictionary: IconDictionaryType = {
-  linkedin: <Image className="fill-pink-500 text-red-500" src={LinkedInIcon} alt="LinkedIn icon" />,
-  mail: <Image className="icon" src={MailIcon} alt="Mail icon" />,
-  github: <Image className="fill-pink-500 text-red-500 " src={GithubIcon} alt="Github icon" />,
-};
+// export const IconDictionary: IconDictionaryType = {
+//   // linkedin: <Image className="fill-pink-500 text-red-500" src={LinkedInIcon} alt="LinkedIn icon" />,
+//   linkedin: <LinkedIn_icon fillColor="#f00" className="w-8"/>,
+//   mail: <Image className="icon" src={MailIcon} alt="Mail icon" />,
+//   github: <Image className="fill-pink-500 text-red-500 " src={GithubIcon} alt="Github icon" />,
+// };
 
 const LogoDictionary: IconDictionaryType = {
   github: <Image src={GithubLogo} alt="Github icon" />,
