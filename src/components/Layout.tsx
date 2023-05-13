@@ -23,10 +23,9 @@ export default function RootLayout({
       </Head>
 
       <NavigationMenu />
-      <div className="bg-primary min-h-screen pt-10">
-        <div className=" bg-secondary text-primary py-3 px-6 flex-grow">
-          {children}
-        </div>
+      <div className=" bg-secondary text-primary py-3  pt-16 min-h-screen flex flex-col px-2 md:px-4 text-md md:text-lg">
+
+        {children}
       </div>
     </>
   );

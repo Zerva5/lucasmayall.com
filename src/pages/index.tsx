@@ -8,7 +8,7 @@ import adventurePicture from "../../public/photos/j_camping01.jpg";
 function Home() {
   return (
     <DefaultPage title="Home">
-      <ContentBubble title="About Me">
+      <ContentBubble title="About Me" isFirst={true}>
         <p className="">
           Hey! My name is Lucas and I'm a software developer living in
           Vancouver, British Columbia. I'm currently working at{" "}
