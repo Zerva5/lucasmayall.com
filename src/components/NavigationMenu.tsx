@@ -38,9 +38,9 @@ export function NavigationMenu() {
   return (
     <div ref={menuRef}>
       <div className="">
-        <div className={`fixed left-0 top-0 z-20 bg-accent`}>
+        <div className={`fixed left-0 top-0 z-20`}>
           <button
-            className="bg-accent p-4 text-secondary focus:outline-none"
+            className="bg-accent p-4 text-secondary focus:outline-none rounded-br-md"
             onClick={toggleMenu}
           >
             <div
