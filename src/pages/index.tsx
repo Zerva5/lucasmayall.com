@@ -17,7 +17,8 @@ function Home() {
           Science and Statistics. I'm passionate about software development,
           data science, and machine learning. I'm a huge fan of the outdoors and
           love to go hiking, camping, and rock climbing. I love traveling
-          (especially by motorcycle!) and have gone on a number of motorcycle-camping trips already.
+          (especially by motorcycle!) and have gone on a number of
+          motorcycle-camping trips already.
         </p>
 
         <br />
@@ -35,12 +36,12 @@ function Home() {
           <Link href="/projects">projects page</Link> or take a deeper dive on
           my <Link href="https://www.github.com/Zerva5">Github</Link>.
         </p>
-
       </ContentBubble>
 
       <ContentBubble title="Adventures">
-        <div className="flex">
-          <div className="flex-grow w-1/2 flex-shrink-0 mr-2">
+        {/* <div className="flex flex-col justify-evenly flex-wrap"> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="">
             <p>
               I love to travel and see new places. Whether its halfway across
               the planet or a few hours away, I'm always down for an adventure.
@@ -58,13 +59,13 @@ function Home() {
             </p>
           </div>
 
-<div>
-          <Image
-            className="rounded-md transition-shadow duration-200 ease-in-out hover:shadow-lg hover:shadow-black/30 "
-            src={adventurePicture} alt={"Picture of BC landscape"}/>
-
-
-</div>
+          <div className="">
+            <Image
+              className="rounded-md transition-shadow duration-200 ease-in-out hover:shadow-lg hover:shadow-black/30 "
+              src={adventurePicture}
+              alt={"Picture of BC landscape"}
+            />
+          </div>
         </div>
       </ContentBubble>
     </DefaultPage>
