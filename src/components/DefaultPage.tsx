@@ -9,7 +9,7 @@ export default function DefaultPage({
 }) {
   return (
     <>
-      <h1 className="text-center pb-5">{title}</h1>
+      <h1 className="text-center pb-4">{title}</h1>
       <div className="flex-grow flex flex-col">{children}</div>
     </>
   );

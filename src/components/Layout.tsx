@@ -2,6 +2,7 @@ import { NavigationMenu } from "@/components/NavigationMenu";
 import "../app/globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { isWide, useWindowSize } from "../../util/WindowSize";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const { width, height } = useWindowSize();
+  const constantMenu = isWide(width);
+
   return (
     <>
       <Head>
@@ -23,8 +28,10 @@ export default function RootLayout({
       </Head>
 
       <NavigationMenu />
-      <div className=" bg-secondary text-primary py-3  pt-16 min-h-screen flex flex-col px-2 md:px-4 text-md md:text-lg">
-
+      <div className={` bg-secondary text-primary py-3 min-h-screen flex flex-col
+      ${constantMenu ? "ml-64 px-4 text-lg" : "ml-0 px-2 text-md"}
+      
+      `}>
         {children}
       </div>
     </>

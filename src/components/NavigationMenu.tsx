@@ -5,9 +5,15 @@ import profilePhoto from "../../public/profile-photo.jpg";
 import Image from "next/image";
 import { Github_icon, LinkedIn_icon, Mail_icon } from "./SvgIcons";
 import React, { useRef, useEffect } from "react";
+import HamburgerButtons from "./HamburgerButton";
+import { isWide, useWindowSize } from "../../util/WindowSize";
 
 export function NavigationMenu() {
-  const [menuVisible, setMenuVisible] = React.useState(false);
+  const { width, height } = useWindowSize();
+
+  const constantMenu = isWide(width);
+
+  const [menuVisible, setMenuVisible] = React.useState(constantMenu);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const pages: { name: string; link: string }[] = [
@@ -38,47 +44,30 @@ export function NavigationMenu() {
   return (
     <div ref={menuRef}>
       <div className="">
-        <div className={`fixed left-0 top-0 z-20 bg-accent`}>
-          <button
-            className="bg-accent p-4 text-secondary focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <div
-              className={`h-1 w-6 mb-1 bg-primary transition-transform duration-300 ease-in-out ${
-                menuVisible ? "transform -rotate-45 translate-y-2" : ""
-              }`}
-            ></div>
-            <div
-              className={`h-1 w-6 mb-1 bg-primary transition-opacity duration-300 ease-in-out ${
-                menuVisible ? "opacity-0" : "opacity-100"
-              }`}
-            ></div>
-            <div
-              className={`h-1 w-6 bg-primary transition-transform duration-300 ease-in-out ${
-                menuVisible ? "transform rotate-45 -translate-y-2" : ""
-              }`}
-            ></div>
-          </button>
-        </div>
-
-        {/* <div className={`fixed left-0 top-0 z-20 bg-accent`}>
-          <button
-            className="bg-accent  p-4 text-secondary focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <div className="h-1 w-6 mb-1 bg-primary"></div>
-            <div className="h-1 w-6 mb-1 bg-primary"></div>
-            <div className="h-1 w-6 bg-primary"></div>
-          </button>
-        </div> */}
+        {/* If we are constant we don't want a hamburger menu */}
+        {!constantMenu && (
+          <HamburgerButtons
+            isVisible={() => menuVisible}
+            toggleMenu={toggleMenu}
+          />
+        )}
 
         <nav
-          className={`pt-20 fixed h-full left-0 top-0 h-screen w-64 bg-secondary text-primary flex flex-col p-6 justify-between z-10 transform transition-transform duration-300 ease-in-out ${
-            menuVisible ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`border-r-4 border-accent fixed left-0 top-0 h-screen w-64 bg-secondary text-primary flex flex-col p-4 justify-between z-10 transform transition-transform duration-300 ease-in-out 
+
+          ${
+            constantMenu
+              ? "translate-x-0 static pt-4"
+              : "fixed left-0 top-0 pt-16"
+          }
+          
+          ${menuVisible ? "translate-x-0" : "-translate-x-full"}
+          `}
         >
           <div className="">
-            <div className="mx-auto font-bold text-center">
+            <div className={`mx-auto font-bold text-center
+            ${constantMenu ? "" : "hidden"}
+            `}>
               <Image
                 src={profilePhoto}
                 alt="Picture of the Lucas"
@@ -86,7 +75,6 @@ export function NavigationMenu() {
               />
               <h3 className="my-3 text-xl">Lucas Mayall</h3>
             </div>
-
             <ul className="text-lg py-0">
               {pages.map((item) => (
                 <li onClick={() => setMenuVisible(false)} key={item.name}>
@@ -103,7 +91,7 @@ export function NavigationMenu() {
             </ul>
           </div>
 
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-around">
             <SocialButton
               innerContent={<LinkedIn_icon />}
               link="https://github.com/Zerva5"

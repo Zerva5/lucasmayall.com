@@ -34,11 +34,11 @@ export default function ProjectEntry({
       </div> */}
 
       <div className=" flex-1 text-text-primary">
-        <div className="project-entry-top-container">
+        <div className="project-entry-top-container mb-4">
           <div className="flex flex-col md:flex-row">
             <h4 className="project-entry-title text-xl font-bold">{title}</h4>
             <div className="project-entry-tech-container flex justify-self-end ml-0 md:ml-auto">
-              <h5 className="my-auto mr-1">Technologies: </h5>
+              {/* <h5 className="my-auto mr-1">Technologies: </h5> */}
               <TechList technologies={technologies} />
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ProjectEntry({
           {description}
         </div>
 
-        <div className="justify-center p-2 rounded-md bg-accent mt-2 w-auto inline-block">
+        <div className=" p-2 rounded-md bg-accent mt-2 w-auto inline-block">
           <a
             href={link}
             // target="_blank"

@@ -46,6 +46,16 @@ h4{
   @apply font-semibold;
 }
 
+h5{
+  @apply text-lg;
+  @apply font-semibold;
+}
+
+h6{
+  @apply text-base;
+  @apply font-semibold;
+}
+
 a{
   @apply text-blue-500;
   @apply hover:underline;
