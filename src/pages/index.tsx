@@ -1,13 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import DefaultPage from "@/components/DefaultPage";
-import ContentBubble from "@/components/ContentBubble";
+import ContentBubble from "@/components/ContentSection";
 
 import adventurePicture from "../../public/photos/j_camping01.jpg";
+import profilePhoto from "../../public/profile-photo.jpg";
+import { isWide, useWindowSize } from "../../util/WindowSize";
 
 function Home() {
-  return (
-    <DefaultPage title="Home">
+
+  const { width, height } = useWindowSize();
+
+  const constantMenu = isWide(width);
+  // const isMobile = width !== undefined && width < 640;
+
+  const content = (
+    <>
       <ContentBubble title="About Me" isFirst={true}>
         <p className="">
           Hey! My name is Lucas and I'm a software developer living in
@@ -68,7 +76,29 @@ function Home() {
           </div>
         </div>
       </ContentBubble>
+</>
+  )
+
+  var profileImage = (<Image
+        src={profilePhoto}
+        alt="Picture of the Lucas"
+        className="rounded-md aspect-square object-cover w-72 mx-auto"
+      />);
+
+  if (constantMenu) {
+    profileImage = (<></>);
+   }
+
+
+
+  return (
+    <>
+    {profileImage}
+    
+    <DefaultPage title="Lucas Mayall">
+      {content}
     </DefaultPage>
+    </>
   );
 }
 
