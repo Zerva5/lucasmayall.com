@@ -1,3 +1,5 @@
+
+import Separator from "./Separator";
 export default function SideContentBox({
   children,
   title,
@@ -8,13 +10,17 @@ export default function SideContentBox({
   isFirst?: boolean;
 }) {
   return (
-    <div
-      className={`bg-white shadow-md rounded-md p-4 text-text-primary ${
-        isFirst ? "" : "mt-4"
+    <>
+
+    {!isFirst && (<Separator/>)}
+        <div
+      className={` shadow-md  py-4 text-primary ${
+        isFirst ? "" : "mt-0 "
       }`}
     >
-      <h4 className="">{title}</h4>
+      <h4 className="text-xl font-bold">{title}</h4>
       <div>{children}</div>
     </div>
+    </>
   );
 }

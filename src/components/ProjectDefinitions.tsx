@@ -30,7 +30,7 @@ const projects = [
     ),
 
     image: "/150_placeholder.png",
-    link: "#",
+    link: "https://github.com/Zerva5/Zerva5.github.io",
     technologies: [
       "TypeScript",
       "ReactJS",

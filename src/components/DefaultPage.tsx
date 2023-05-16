@@ -1,3 +1,5 @@
+import Separator from "./Separator";
+
 export default function DefaultPage({
   children,
   title,
@@ -9,7 +11,8 @@ export default function DefaultPage({
 }) {
   return (
     <>
-      <h1 className="text-center pb-4">{title}</h1>
+      <h1 className="text-center pb-0 text-4xl">{title}</h1>
+      <Separator/>
       <div className="flex-grow flex flex-col">{children}</div>
     </>
   );

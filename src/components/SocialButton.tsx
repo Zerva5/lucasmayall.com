@@ -7,7 +7,12 @@ export default function SocialButton({
 }) {
   return (
     <a href={link} target="_blank">
-      <button className="px-2 py-2 bg-gray-700 rounded-md hover:bg-accent-alt focus:outline-none focus:bg-accent-alt w-10 text-primary  hover:bg-accent">
+      <button className="p-3  rounded-md  w-14 text-primary   
+      hover:text-accent hover:border-accent
+      border-2 border-primary
+      transform transition duration-200 ease-in-out hover:scale-110
+       
+      ">
         {innerContent}
       </button>
     </a>

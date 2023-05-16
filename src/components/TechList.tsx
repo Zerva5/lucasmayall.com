@@ -5,7 +5,8 @@ export default function TechList({ technologies }: { technologies: string[] }) {
   technologies.sort((a, b) => a.localeCompare(b));
 
   return (
-    <div className="tech-icons flex flex-column flex-wrap  border-accent border-b-4 p-2 ml-2">
+    <div className="tech-icons flex flex-column flex-wrap p-2  justify-center ">
+
       {technologies.map((tech, index) => (
         <div
           className="tech-icon-container my-auto mx-1 h-8 w-8 flex "
