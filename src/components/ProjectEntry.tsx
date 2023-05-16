@@ -21,8 +21,8 @@ export default function ProjectEntry({
 }) {
   return (
     <div
-      className={`flex bg-white shadow-md rounded-md p-4 ${
-        index > 0 ? "mt-4" : ""
+      className={`flex  shadow-md  p-4 ${
+        index > 0 ? "mt-4 border-t-2 border-accent" : ""
       }`}
     >
       {/* <div className="mr-4">
@@ -33,18 +33,18 @@ export default function ProjectEntry({
         />
       </div> */}
 
-      <div className=" flex-1 text-text-primary">
+      <div className=" flex-1 text-primary">
         <div className="project-entry-top-container mb-4">
           <div className="flex flex-col md:flex-row">
             <h4 className="project-entry-title text-xl font-bold">{title}</h4>
-            <div className="project-entry-tech-container flex justify-self-end ml-0 md:ml-auto">
+            <div className="project-entry-tech-container bg-primary rounded-md border-b-4 border-accent ml-0 md:ml-auto w-fit">
               {/* <h5 className="my-auto mr-1">Technologies: </h5> */}
               <TechList technologies={technologies} />
             </div>
           </div>
         </div>
         {/* CONTENT */}
-        <div className="text-text-primary flex-1 pr-5 text-md">
+        <div className="text-primary flex-1 pr-5 text-md">
           {description}
         </div>
 
