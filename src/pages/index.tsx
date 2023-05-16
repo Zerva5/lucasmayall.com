@@ -3,19 +3,34 @@ import Link from "next/link";
 import DefaultPage from "@/components/DefaultPage";
 import ContentBubble from "@/components/ContentSection";
 
-import adventurePicture from "../../public/photos/j_camping01.jpg";
+import adventurePicture from "../../public/photos/5040_02.jpg";
 import profilePhoto from "../../public/profile-photo.jpg";
 import { isWide, useWindowSize } from "../../util/WindowSize";
+import ImageWithCaption from "@/components/ImageCaption";
 
 function Home() {
 
   const { width, height } = useWindowSize();
 
   const constantMenu = isWide(width);
-  // const isMobile = width !== undefined && width < 640;
 
-  const content = (
+  var profileImage = (<Image
+        src={profilePhoto}
+        alt="Picture of Lucas"
+        className="rounded-md aspect-square object-cover w-72 mx-auto"
+      />);
+
+  if (constantMenu) {
+    profileImage = (<></>);
+   }
+
+
+
+  return (
     <>
+    {profileImage}
+    
+    <DefaultPage title="Lucas Mayall">
       <ContentBubble title="About Me" isFirst={true}>
         <p className="">
           Hey! My name is Lucas and I'm a software developer living in
@@ -25,7 +40,7 @@ function Home() {
           Science and Statistics. I'm passionate about software development,
           data science, and machine learning. I'm a huge fan of the outdoors and
           love to go hiking, camping, and rock climbing. I love traveling
-          (especially by motorcycle!) and have gone on a number of
+          (especially by motorcycle) and have gone on a number of
           motorcycle-camping trips already.
         </p>
 
@@ -44,6 +59,10 @@ function Home() {
           <Link href="/projects">projects page</Link> or take a deeper dive on
           my <Link href="https://www.github.com/Zerva5">Github</Link>.
         </p>
+        <br/>
+        <p>
+          Like many software developers I have a million unfinished projects from random ideas, testing, or just for fun. In highschool I found it very difficult to make progress on these projects and would often get stuck in a loop of starting a project, getting bored or frustrated, and then starting a new one. I've since learned to focus on finishing projects and have been able to produce some pretty cool things. I still have a lot of unfinished projects but now they act more as testing grounds for a new ideas, instead of a graveyard of ideas.
+        </p>
       </ContentBubble>
 
       <ContentBubble title="Adventures">
@@ -61,42 +80,23 @@ function Home() {
             <p>
               During my time at UVic most of my trips had to stay on Vancouver
               Island, despite this I was still able to see some pretty amazing
-              places. Hiking 5040 peak, finding long lost routes to beautiful
+              places. Hiking 50-40 peak, finding long lost routes to beautiful
               lakes, and exploring hundreds of kilometers of logging roads are
               just a few of the things I got to do.
             </p>
           </div>
 
           <div className="">
-            <Image
+            <ImageWithCaption altText="5040 Peak, BC" imgSrc={adventurePicture} caption="5040 Peak, Vancouver Island - Summer 2022"/>
+            {/* <ImageWithCaption altText="Rowbotham Lake, Parksville, BC" imgSrc={adventurePicture} caption="Rowbotham Lake, Parksville, BC"/> */}
+            {/* <Image
               className="rounded-md transition-shadow duration-200 ease-in-out hover:shadow-lg hover:shadow-black/30 "
               src={adventurePicture}
               alt={"Picture of BC landscape"}
-            />
+            /> */}
           </div>
         </div>
       </ContentBubble>
-</>
-  )
-
-  var profileImage = (<Image
-        src={profilePhoto}
-        alt="Picture of the Lucas"
-        className="rounded-md aspect-square object-cover w-72 mx-auto"
-      />);
-
-  if (constantMenu) {
-    profileImage = (<></>);
-   }
-
-
-
-  return (
-    <>
-    {profileImage}
-    
-    <DefaultPage title="Lucas Mayall">
-      {content}
     </DefaultPage>
     </>
   );
