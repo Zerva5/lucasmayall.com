@@ -17,6 +17,10 @@ import CSSLogo from "../../public/logos/css_logo.svg";
 import LinuxLogo from "../../public/logos/linux_logo.svg";
 import ShellScriptLogo from "../../public/logos/shellscript_logo.svg";
 import RLogo from "../../public/logos/r_logo.svg";
+import NodeJSLogo from "../../public/logos/nodejs_logo.svg";
+import ExpressJSLogo from "../../public/logos/expressjs_logo.svg";
+import MongoDBLogo from "../../public/logos/mongodb_logo.svg";
+import FigmaLogo from "../../public/logos/figma_logo.svg";
 
 //import LinkedInIcon from "../../public/icons/linkedin_icon.svg";
 import {LinkedIn_icon} from "./SvgIcons";
@@ -62,6 +66,10 @@ const LogoDictionary: IconDictionaryType = {
   Shell: <Image src={ShellScriptLogo} alt="Shell icon" />,
   "Bash Scripting": <Image src={ShellScriptLogo} alt="Bash Scripting icon" />,
   R: <Image src={RLogo} alt="R icon" />,
+  NodeJS: <Image src={NodeJSLogo} alt="NodeJS icon" />,
+  ExpressJS : <Image src={ExpressJSLogo} alt="ExpressJS icon" />,
+  MongoDB : <Image src={MongoDBLogo} alt="MongoDB icon" />,
+  Figma: <Image src={FigmaLogo} alt="Figma icon" />,
 };
 
 export default LogoDictionary;
