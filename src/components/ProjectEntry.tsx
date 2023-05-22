@@ -21,7 +21,7 @@ export default function ProjectEntry({
 }) {
   return (
     <div
-      className={`flex  shadow-md  p-4 ${
+      className={`flex  p-4 ${
         index > 0 ? "mt-4 border-t-2 border-accent" : ""
       }`}
     >
@@ -48,16 +48,17 @@ export default function ProjectEntry({
           {description}
         </div>
 
+        {(link !== "" && link !== undefined &&
         <div className=" p-2 rounded-md bg-accent mt-2 w-auto inline-block">
           <a
             href={link}
-            // target="_blank"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-text-primary hover:no-underline"
           >
             Learn more
           </a>
-        </div>
+        </div>)}
       </div>
     </div>
   );
