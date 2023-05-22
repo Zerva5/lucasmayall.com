@@ -15,8 +15,8 @@ export default function ImageWithCaption({imgSrc, altText, caption}:ImageWithCap
         src={imgSrc}
         alt={altText}
         className="rounded-md"
-        // width={500} // Set your desired width
-        // height={300} // Set your desired height
+        width={1000} // Set your desired width
+        height={700} // Set your desired height
       />
       <h5 className="text-center">{caption}</h5>
     </div>
