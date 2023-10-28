@@ -29,7 +29,7 @@ import GithubIcon from "../../public/icons/github_icon.svg";
 import MailIcon from "../../public/icons/mail_icon.svg";
 
 export function TypeScriptIcon() {
-  return <img src="typescript_logo.svg"></img>;
+  return <Image src="typescript_logo.svg" alt="TypeScript Logo"/>;
 }
 
 type IconDictionaryType = {

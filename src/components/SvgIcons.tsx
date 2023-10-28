@@ -14,7 +14,7 @@ export const Github_icon = () => {
 
 export const LinkedIn_icon = () => {
   return (
-    <svg  version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg  version="1.1" viewBox="-1.125 0 22.5 22.5" xmlns="http://www.w3.org/2000/svg">
 	<title>linkedin [#161]</title>
 	<defs/>
 	<g id="Page-1" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">

@@ -1,3 +1,5 @@
+import '../app/icons.css'
+
 export default function SocialButton({
   link,
   innerContent,
@@ -7,14 +9,10 @@ export default function SocialButton({
 }) {
   return (
     <a href={link} target="_blank">
-      <button className="p-3  rounded-md  w-14 text-primary   
-      hover:text-accent hover:border-accent
-      border-2 border-primary
-      transform transition duration-200 ease-in-out hover:scale-110
-       
+      <div className="social-button
       ">
         {innerContent}
-      </button>
+      </div>
     </a>
   );
 }

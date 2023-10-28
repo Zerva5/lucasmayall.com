@@ -1,0 +1,22 @@
+
+  .blinking-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    
+    background-color: white;
+    vertical-align: middle;
+    animation: blink 0.6s steps(100, start) infinite;
+    position: relative;
+    bottom: 2px;
+  }
+  
+  @keyframes blink {
+    20%, 80% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
