@@ -29,7 +29,7 @@ body {
 }
 
 h2{
-    font-family: 'Source Code Pro Medium';
+    font-family: 'Spline Sans Mono', 'monospace';
 }
 
 
@@ -51,7 +51,7 @@ h2{
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    font-family: 'Source Code Pro Medium';
+    font-family: 'Spline Sans Mono', 'monospace';
 }
 .header-left h2{
     margin: 0;
