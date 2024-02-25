@@ -1,8 +1,0 @@
-node_modules/
-.next/
-/out/
-/build/
-.cache/
-.vscode/
-.DS_Store
-*.log
