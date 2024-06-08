@@ -8,8 +8,10 @@
 	import HeroBox from "$lib/components/containers/HeroBox.svelte";
 	import Pin from "$lib/components/icons/pin.svelte";
 	import canada from "$lib/images/canada.png";
+	import heroBG from "$lib/images/hero-bg.jpg";
 	import Flag from "$lib/components/icons/flag.svelte";
 	import MainContent from "$lib/components/containers/MainContent.svelte";
+	import profileImg from "$lib/images/profile.jpg";
 </script>
 
 <svelte:head>
@@ -18,12 +20,12 @@
 </svelte:head>
 
 <section class="whoami">
-	<img src="/images/hero-bg.jpg" alt="Background" />
+	<img src={heroBG} alt="Background" />
 	<div class="hero-container">
 		<HeroBox>
 			<!-- <div class="hero"> -->
 			<div class="profile-photo">
-				<ProfilePhoto img="/profile.jpg" />
+				<ProfilePhoto img={profileImg} />
 
 				<h2>Hey 👋</h2>
 				<p>My name is <span class="name">Lucas</span></p>
@@ -79,9 +81,9 @@
 <MainContent>
 	<h1>Woah! Not much here right now.</h1>
 	<p>
-		This website is mainly here as a place to host my resume. In the future
-		I'd love to post pictures and stories from trips I go on. Maybe I'll do
-		some tech blogging at some point. Who knows!
+		This website is mainly here tohost my resume. In the future I'd love to
+		post pictures and stories from trips I go on. Maybe I'll write some blog
+		posts at some point. Who knows!
 	</p>
 </MainContent>
 
