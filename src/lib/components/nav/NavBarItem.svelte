@@ -16,8 +16,6 @@
     $primary: #337ccf;
 
     .nav-item {
-        margin: 0 1rem;
-
         &:hover a {
             color: $primary;
         }
@@ -26,11 +24,24 @@
     .nav-item a {
         text-decoration: none;
         color: #777;
+        padding: 1rem;
     }
 
     .active {
         & a {
             color: #333;
+        }
+    }
+
+    @media (max-width: 768px) {
+        a {
+            font-size: 2rem;
+            padding: 1rem 1rem;
+            display: inline-block;
+        }
+
+        .nav-item {
+            margin: unset;
         }
     }
 </style>

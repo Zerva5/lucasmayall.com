@@ -81,9 +81,10 @@
 <MainContent>
 	<h1>Woah! Not much here right now.</h1>
 	<p>
-		This website is mainly here tohost my resume. In the future I'd love to
-		post pictures and stories from trips I go on. Maybe I'll write some blog
-		posts at some point. Who knows!
+		This website is mainly here to host my resume. In the future I'd love to
+		post pictures and stories from trips I go on.
+		<br />
+		Maybe I'll write some blog posts at some point. Who knows!
 	</p>
 </MainContent>
 

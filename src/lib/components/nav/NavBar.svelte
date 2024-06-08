@@ -116,12 +116,19 @@
         }
 
         .nav-middle {
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
             align-items: start;
+            position: relative;
 
             & .nav-items {
                 display: none; /* Hide navigation items initially */
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                z-index: 10;
+                background-color: #f0f0f0;
                 flex-direction: column;
                 align-items: center;
                 // background-color: #e0e0e0;

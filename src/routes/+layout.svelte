@@ -31,7 +31,7 @@
 		// display: flex;
 		// flex-direction: column;
 		// padding: 1rem;
-		max-width: 64rem;
+		// max-width: 64rem;
 		// margin: 0 auto;
 		box-sizing: border-box;
 		background-color: white;
