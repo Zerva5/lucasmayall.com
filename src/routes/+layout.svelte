@@ -13,14 +13,14 @@
 	<main>
 		<slot />
 	</main>
-	<footer>Last update June 8, 2024</footer>
+	<footer>Last update {import.meta.env.VITE_LAST_UPDATE}</footer>
 </div>
 
 <style lang="scss">
-	@import "/src/style/root.scss";
+	@use "/src/style/root.scss";
 
 	div {
-		background-color: $primary;
+		background-color: var(--primary);
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
@@ -45,7 +45,7 @@
 	footer {
 		padding: 6px 0;
 		text-align: center;
-		background-color: $primary;
+		background-color: var(--primary);
 		color: white;
 	}
 

@@ -13,11 +13,9 @@
 </li>
 
 <style lang="scss">
-    $primary: #337ccf;
-
     .nav-item {
         &:hover a {
-            color: $primary;
+            color: var(--primary);
         }
     }
 

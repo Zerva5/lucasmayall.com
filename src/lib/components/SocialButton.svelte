@@ -8,14 +8,14 @@
 </a>
 
 <style lang="scss">
-    @import "/src/style/root.scss";
+    @use "/src/style/root.scss";
 
     a {
         display: flex;
         box-sizing: border-box;
         align-items: center;
         justify-content: center;
-        border: 2px solid $primary;
+        border: 2px solid var(--primary);
         padding: 0.125rem;
         // width: ;
         height: 75%;
@@ -29,7 +29,7 @@
 
         &:hover {
             color: white;
-            background-color: $primary;
+            background-color: var(--primary);
         }
     }
 

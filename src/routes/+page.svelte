@@ -8,10 +8,11 @@
 	import HeroBox from "$lib/components/containers/HeroBox.svelte";
 	import Pin from "$lib/components/icons/pin.svelte";
 	import canada from "$lib/images/canada.png";
-	import heroBG from "$lib/images/hero-bg.jpg";
 	import Flag from "$lib/components/icons/flag.svelte";
 	import MainContent from "$lib/components/containers/MainContent.svelte";
 	import profileImg from "$lib/images/profile.jpg";
+
+	const herobg = "/hero-bg.jpg";
 </script>
 
 <svelte:head>
@@ -20,7 +21,7 @@
 </svelte:head>
 
 <section class="whoami">
-	<img src={heroBG} alt="Background" />
+	<img src={herobg} alt="Background" />
 	<div class="hero-container">
 		<HeroBox>
 			<!-- <div class="hero"> -->
@@ -33,31 +34,29 @@
 		</HeroBox>
 		<div class="herobox-container">
 			<HeroBox>
-				<div>
-					<div class="ima">
-						<p>I'm known by my friends as a</p>
-						<p class="rotator">
-							<TextRotator
-								options={[
-									"Software Developer",
-									"Hiker",
-									"Mountain Biker",
-									"Rock Climber",
-									"Photographer",
-									"Amateur Mechanic",
-									"Snowboarder",
-									"Gamer",
-									"Dog Lover",
-									"Canadian",
-									"Cheese Cake Enthusiast",
-									"Vim User",
-									"Linux Elitest",
-									"CamelCase Snob",
-									"Cookie Baker",
-								]}
-								interval={3000}
-							/>
-						</p>
+				<div class="ima">
+					<p>I'm known by my friends as a</p>
+					<div class="rotator">
+						<TextRotator
+							options={[
+								"Software Developer",
+								"Hiker",
+								"Mountain Biker",
+								"Rock Climber",
+								"Photographer",
+								"Amateur Mechanic",
+								"Snowboarder",
+								"Gamer",
+								"Dog Lover",
+								"Canadian",
+								"Cheese Cake Enthusiast",
+								"Vim User",
+								"Linux Elitest",
+								"CamelCase Snob",
+								"Cookie Baker",
+							]}
+							interval={3000}
+						/>
 					</div>
 				</div>
 			</HeroBox>
@@ -66,11 +65,11 @@
 					<p>
 						<span class="location-pin"><Pin /></span> Kamloops, BC
 					</p>
-					<!-- <p> -->
-					<!-- <span class="location-flag"><Flag /></span> -->
-					<!-- <img src={canada} height="16px" alt="Canadian Flag" /> -->
-					<!-- </p> -->
-					<!-- <br /> -->
+					<!--<p>-->
+					<!--<span class="location-flag"><Flag /></span>-->
+					<!--<img src={canada} height="16px" alt="Canadian Flag" />-->
+					<!--</p>-->
+					<!--<br />-->
 					<!--<br />-->
 				</div>
 			</HeroBox>
@@ -89,7 +88,7 @@
 </MainContent>
 
 <style lang="scss">
-	@import "/src/style/root.scss";
+	@use "/src/style/root.scss";
 
 	.ima {
 		& p {
@@ -180,7 +179,7 @@
 
 	span.name {
 		font-weight: bold;
-		color: $primary;
+		color: var(--primary);
 	}
 
 	.location-pin {

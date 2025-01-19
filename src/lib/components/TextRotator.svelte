@@ -1,9 +1,12 @@
 <script lang="ts">
     import { slide } from "svelte/transition";
 
-    export let options: string[] = []; // Array of text options
-    export let interval = 2000; // Transition interval in milliseconds
-    let currentOption = 0;
+    let { options, interval }: { options: string[]; interval: number } =
+        $props();
+
+    //export let options: string[] = []; // Array of text options
+    //export let interval = 2000; // Transition interval in milliseconds
+    let currentOption = $state(0);
 
     function transitionText() {
         let randomIndex = Math.floor(Math.random() * options.length);
@@ -22,13 +25,13 @@
 </div>
 
 <style lang="scss">
-    $primary: #337ccf;
     div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         flex: 0.6;
+        background-color: var(--primary);
     }
 
     .text-rotator {
@@ -38,7 +41,7 @@
     }
 
     span {
-        background-color: $primary;
+        background-color: var(--primary);
         color: white;
         padding: 0.5rem;
     }

@@ -1,6 +1,8 @@
 <script lang="ts">
-    import resume from "$lib/resume.pdf";
+    //import resume from "$lib/resume.pdf";
     import { onMount } from "svelte";
+
+    const resume = "resume.pdf";
 
     let pdf: HTMLEmbedElement;
 
