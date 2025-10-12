@@ -51,7 +51,7 @@
 								"Canadian",
 								"Cheese Cake Enthusiast",
 								"Vim User",
-								"Linux Elitest",
+								"Linux Elitist",
 								"CamelCase Snob",
 								"Cookie Baker",
 							]}
