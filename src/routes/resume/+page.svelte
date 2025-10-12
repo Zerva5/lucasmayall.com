@@ -19,7 +19,7 @@
     bind:this={pdf}
 />
 
-<span>Last updated: October 2023</span>
+<span>Last updated: October 2025</span>
 
 <style lang="scss">
     span {
