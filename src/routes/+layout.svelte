@@ -8,6 +8,7 @@
 	<NavBar>
 		<NavBarItem url="/">Home</NavBarItem>
 		<NavBarItem url="/resume">Resume</NavBarItem>
+		<NavBarItem url="/photos">Photos</NavBarItem>
 	</NavBar>
 
 	<main>
