@@ -13,13 +13,12 @@
     "@sveltejs/adapter-auto": "^4.0.0",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.46.4",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "sass": "^1.93.2",
     "svelte": "^5.39.11",
     "svelte-check": "^4.3.3",
     "tslib": "^2.8.1",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.9"
+    "typescript": "^5.9.3"
   },
   "type": "module",
   "dependencies": {
