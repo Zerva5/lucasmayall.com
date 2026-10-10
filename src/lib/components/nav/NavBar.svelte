@@ -1,152 +1,166 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import SocialButton from "../SocialButton.svelte";
-    import Github from "../icons/github.svelte";
-    import Linkedin from "../icons/linkedin.svelte";
-    import Mail from "../icons/mail.svelte";
-    import MenuButton from "./MenuButton.svelte";
+	import { page } from "$app/state";
+	import SocialButton from "$lib/components/SocialButton.svelte";
+	import Github from "$lib/components/icons/github.svelte";
+	import Linkedin from "$lib/components/icons/linkedin.svelte";
+	import Mail from "$lib/components/icons/mail.svelte";
+	import MenuButton from "$lib/components/nav/MenuButton.svelte";
+	import { SOCIALS, type SocialIcon } from "$lib/site";
+	import type { Snippet } from "svelte";
 
-    let isOpen = false;
-    let curUrl = $page.url.pathname;
+	let { children }: { children?: Snippet } = $props();
 
-    // Closes menu when navigating to a new page
-    $: if ($page.url.pathname !== curUrl) {
-        isOpen = false;
-        curUrl = $page.url.pathname;
-    }
+	let isOpen = $state(false);
+	let pathname = $derived(page.url.pathname);
+
+	// SOCIALS stores icon names so the config stays serialisable; Vite needs real
+	// imports, so they're mapped here.
+	const icons: Record<SocialIcon, typeof Linkedin> = {
+		linkedin: Linkedin,
+		github: Github,
+		mail: Mail,
+	};
+
+	// Close the menu whenever the route changes.
+	$effect(() => {
+		pathname;
+		isOpen = false;
+	});
 </script>
 
 <nav class="navbar">
-    <div class="nav-left">
-        <!--<slot name="logo" />-->
-        <div class="menu-btn">
-            <MenuButton bind:open={isOpen} />
-        </div>
-    </div>
+	<div class="nav-left">
+		<MenuButton bind:open={isOpen} />
+	</div>
 
-    <div class="nav-middle">
-        <ul class="nav-items" class:active={isOpen}>
-            <slot />
-        </ul>
-    </div>
+	<div class="nav-middle">
+		<ul class="nav-items" class:active={isOpen}>
+			{@render children?.()}
+		</ul>
+	</div>
 
-    <div class="nav-right">
-        <div class="menu-btn-alt">
-            <div class="socials">
-                <SocialButton
-                    href="https://www.linkedin.com/in/lucas-mayall/"
-                    alt="LinkedIn"
-                >
-                    <Linkedin />
-                </SocialButton>
-                <SocialButton href="https://github.com/Zerva5" alt="Github">
-                    <Github />
-                </SocialButton>
-                <SocialButton
-                    href="mailto:talktome@lucasmayall.com"
-                    alt="Email"
-                >
-                    <Mail />
-                </SocialButton>
-            </div>
-        </div>
-    </div>
+	<ul class="socials">
+		{#each SOCIALS as social (social.href)}
+			<li>
+				<SocialButton href={social.href} label={social.label}>
+					{@const Icon = icons[social.icon]}
+					<Icon />
+				</SocialButton>
+			</li>
+		{/each}
+	</ul>
 </nav>
 
 <style lang="scss">
-    .nav-right {
-        display: relative;
+	.navbar {
+		display: flex;
+		padding: 0.5rem 2rem;
+		position: relative;
+		background-color: var(--primary);
+		align-items: center;
+	}
 
-        & .menu-btn-alt {
-            visibility: hidden;
-            position: relative;
-            width: 2rem;
-            height: 2rem;
+	.nav-left {
+		display: flex;
+		min-width: 2rem;
+	}
 
-            & .socials {
-                visibility: visible;
-                position: absolute;
-                height: 100%;
-                top: 0;
-                right: 0;
-                display: flex;
-                justify-content: start;
-                align-items: center;
-                gap: 0.5rem;
-            }
-        }
-    }
+	// Desktop: CSS Grid with equal outer columns for perfect centering
+	@media (min-width: 769px) {
+		.navbar {
+			display: grid;
+			grid-template-columns: 1fr auto 1fr; // Equal left/right, center takes only what it needs
+			gap: 1rem;
+			padding-right: 2rem; // Extra padding so socials don't touch edge
+		}
 
-    .nav-left {
-        display: none;
-        min-width: 2rem;
-        .menu-btn {
-        }
-    }
+		// Column 1: Left spacer (nav-left is here but hidden)
+		.nav-left {
+			visibility: hidden; // Hidden but maintains grid track
+		}
 
-    .nav-middle {
-        // height: 2rem;
-        display: flex;
-        justify-content: center;
+		// Column 2: Nav items centered (auto width, centered in column)
+		.nav-middle {
+			justify-self: center;
+			min-width: 0; // Allow shrinking
+		}
 
-        .nav-items {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-    }
+		// Column 3: Socials right-aligned
+		.socials {
+			justify-self: end;
+			gap: 1rem;
+		}
+	}
 
-    .navbar {
-        display: flex;
-        padding: 0.5rem 2rem;
-        background-color: #f0f0f0;
-        justify-content: space-between;
-    }
+	// Base styles (mobile + shared)
+	.nav-middle {
+		display: flex;
+		justify-content: center;
 
-    /* Mobile Styles */
-    @media (max-width: 768px) {
-        .navbar {
-            // flex-direction: column; /* Stack items vertically on mobile */
-        }
+		.nav-items {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
+		}
+	}
 
-        .nav-left {
-            display: block;
-        }
+	.socials {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 
-        .nav-middle {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            position: relative;
+		// Recolour the social buttons for the blue bar: white outline and glyph,
+		// flipping to blue-on-white when filled on hover.
+		--social-fg: white;
+		--social-hover-fg: var(--primary);
+	}
 
-            & .nav-items {
-                display: none; /* Hide navigation items initially */
-                position: absolute;
-                top: 0;
-                width: 100vw;
-                z-index: 10;
-                background-color: #f0f0f0;
-                flex-direction: column;
-                align-items: center;
-                // background-color: #e0e0e0;
+	/* Mobile Styles */
+	@media (max-width: 768px) {
+		.navbar {
+			justify-content: space-between; // Hamburger left, socials right
+			padding: 0.5rem 1rem; // Reduced horizontal padding on mobile
+		}
 
-                &.active {
-                    display: flex;
-                }
-            }
-        }
+		.nav-left {
+			display: block;
+		}
 
-        .nav-items {
-        }
+		// Socials always visible on mobile, right-aligned
+		.socials {
+			display: flex;
+			gap: 0.5rem;
+		}
 
-        .menu-btn {
-            display: block; /* Show menu toggle button on mobile */
-        }
-    }
+		.nav-middle {
+			// NOT `position: relative` here. The dropdown below is absolutely
+			// positioned, and the nearest positioned ancestor becomes its
+			// containing block -- anchoring it to this box made `left: 0` mean
+			// "start of the nav links", so a 100vw panel hung off to the right.
+			// `.navbar` is the positioning context instead.
 
-    .socials {
-    }
+			.nav-items {
+				display: none; /* Hide navigation items initially */
+				position: absolute;
+				top: 100%;
+				// Spans the bar rather than starting at an arbitrary offset.
+				left: 0;
+				right: 0;
+				z-index: 10;
+				background-color: var(--primary);
+				flex-direction: column;
+				align-items: center;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+				&.active {
+					display: flex;
+				}
+			}
+		}
+	}
 </style>

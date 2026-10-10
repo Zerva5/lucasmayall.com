@@ -1,0 +1,147 @@
+{
+	"$schema": "./resume.schema.json",
+	"name": "Lucas M.K. Mayall",
+	"contact": [
+		{
+			"label": "lucasmayall.com",
+			"href": "https://lucasmayall.com"
+		},
+		{
+			"label": "resume@lucasmayall.com",
+			"href": "mailto:resume@lucasmayall.com"
+		}
+	],
+	"sections": [
+		{
+			"id": "experience",
+			"heading": "Work Experience",
+			"entries": [
+				{
+					"role": "Intermediate Full Stack Developer",
+					"start": "October 2023",
+					"end": null,
+					"organisation": "Bright Health Software Society",
+					"location": "Vancouver, BC (Remote)",
+					"bullets": [
+						"Architected REST API for AI Ambient Scribe feature; integrated third-party transcription provider into EMR and built React audio component for real-time patient encounter summarization.",
+						"Developed C# and Python ETL services to fetch, clean, and normalize clinical reference datasets from Health Canada REST APIs, collaborating with physicians to improve data quality and support safer clinical decision-making.",
+						"Re-architected clinical reference dataset tables with per-column overrides, improving scalability and enabling seamless dataset updates.",
+						"Migrated internal monitoring platform to TimescaleDB, reducing query latency from minutes to under one second and enabling controlled clinical dataset rollouts through deployment and query access features.",
+						"Developed a Rust-based cross-platform updater with API versioning and server management interface, enabling rapid deployment of critical security fixes and feature updates across clients.",
+						"Built a User Management Portal (ASP.NET, GraphQL, SvelteJS) to automate user provisioning across multiple clinic databases, Active Directory, and an internal MFA platform, eliminating up to 4 hours of daily manual support work."
+					]
+				},
+				{
+					"role": "Full Stack Developer",
+					"start": "June 2023",
+					"end": "October 2023",
+					"organisation": "Fathom Scientific Ltd.",
+					"location": "Vancouver, BC (Remote)",
+					"bullets": [
+						"Developed SaaS platform for time-series visualization using React, Django, and PostgreSQL, enhancing UI features and backend optimizations for hydrological monitoring workflows.",
+						"Engineered a distributed Python/Celery/RabbitMQ task queue to automate sensor data ingestion from remote devices over VPN, ETL CSVs to S3 across hundreds of sites, replacing manual workflows and freeing hundreds of man-hours for billable data analysis",
+						"Led cross-functional project with the electrical engineering team to engineer an interface between the distributed task queue and remote embedded device CLI, enabling automated scheduled data retrieval and usage analytics.",
+						"Developed a Dockerized OpenVPN server with a custom monitoring API, enhancing VPN reliability, enabling automated data collection, providing device connection analytics, and streamlining deployments.",
+						"Administered AWS EC2 instances and S3 buckets; managed Cloudflare CDN and DNS configurations with CI/CD pipelines for high availability.",
+						"Containerized core services with Docker, cutting deployment times, eliminating environment inconsistencies, and streamlining developer onboarding."
+					]
+				},
+				{
+					"role": "Part-Time Junior .NET Developer",
+					"start": "September 2022",
+					"end": "June 2023",
+					"organisation": "Department of National Defence (Canada)",
+					"location": "Esquimalt, BC",
+					"bullets": [
+						"Implemented PDF form generation feature for C# WPF-based asset tracking system, cutting manual reporting by 80% for defense logistics workflows.",
+						"Designed caching mechanism for asset lookups, accelerating queries 3x and reducing average DB load by 50%.",
+						"Iterated Windows Forms UIs through stakeholder feedback cycles, delivering intuitive designs for streamlined data input and reporting.",
+						"Authored and optimized SQL Server stored procedures for data aggregation, cutting execution times 50% with joins and indexes to support real-time asset management.",
+						"Delivered all milestones remotely while balancing full course load, demonstrating adaptability in a classified environment."
+					]
+				}
+			]
+		},
+		{
+			"id": "skills",
+			"heading": "Technical Skills",
+			"groups": [
+				{
+					"label": "Languages",
+					"items": [
+						"C#",
+						"TypeScript",
+						"Python",
+						"Rust",
+						"SQL (PostgreSQL, SQL Server)",
+						"Bash",
+						"PowerShell"
+					]
+				},
+				{
+					"label": "Frameworks/Libraries",
+					"items": [
+						"ASP.NET",
+						"React JS",
+						"Django",
+						"WPF",
+						"Windows Forms",
+						"Svelte JS",
+						"Celery",
+						"GraphQL"
+					]
+				},
+				{
+					"label": "Developer Tools/DevOps",
+					"items": [
+						"Git",
+						"Docker",
+						"Bamboo",
+						"CI/CD pipelines",
+						"Azure",
+						"AWS (EC2, S3)",
+						"Cloudflare DNS & CDN",
+						"OpenVPN"
+					]
+				},
+				{
+					"label": "Databases / Data",
+					"items": ["TimescaleDB", "PostgreSQL", "SQL Server", "ETL workflows", "CSV processing"]
+				},
+				{
+					"label": "Other Skills",
+					"items": [
+						"Linux System Administration",
+						"Product Photography",
+						"Remote Collaboration",
+						"Cross-functional Project Leadership"
+					]
+				},
+				{
+					"label": "Hobbies",
+					"items": [
+						"Rock Climbing",
+						"Wildlife Photography",
+						"Backcountry Snowboarding",
+						"Hiking",
+						"Backpacking",
+						"Home Lab"
+					]
+				}
+			]
+		},
+		{
+			"id": "education",
+			"heading": "Education",
+			"entries": [
+				{
+					"role": "BSc. Combined Major in Computer Science and Statistics",
+					"start": "September 2019",
+					"end": "April 2023",
+					"organisation": "University of Victoria",
+					"location": "Victoria, BC"
+				}
+			]
+		}
+	]
+}
