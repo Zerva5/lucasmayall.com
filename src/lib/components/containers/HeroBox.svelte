@@ -1,17 +1,19 @@
 <script lang="ts">
+	import type { Snippet } from "svelte";
+
+	let { children }: { children?: Snippet } = $props();
 </script>
 
-<div>
-    <slot />
+<div class="hero-box">
+	{@render children?.()}
 </div>
 
 <style lang="scss">
-    div {
-        background-color: white;
-        border-radius: 0.5rem;
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
-        // width: min-content;
-    }
+	.hero-box {
+		background-color: var(--color-surface);
+		border-radius: 0.5rem;
+		display: flex;
+		padding: 1rem;
+		justify-content: center;
+	}
 </style>

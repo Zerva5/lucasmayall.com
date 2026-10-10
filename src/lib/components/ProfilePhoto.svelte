@@ -1,32 +1,33 @@
 <script lang="ts">
-    export let img: string;
+	let { img, alt = "Lucas Mayall" }: { img: string; alt?: string } = $props();
 </script>
 
-<div class="placer">
-    <div class="container">
-        <img src={img} alt="profile photo" />
-    </div>
+<div class="profile-photo">
+	<img src={img} {alt} width="200" height="200" loading="lazy" decoding="async" />
 </div>
 
 <style lang="scss">
-    .placer {
-        // border: 4px solid #0066ff;
-        display: inline-block;
-        border-radius: 100%;
-    }
+	.profile-photo {
+		/* Explicit box, overflow hidden and a circular radius turn any aspect
+		   ratio into a neat avatar without needing a pre-cropped image. */
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+		border-radius: 100%;
+		margin: 0 auto;
 
-    .container {
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
 
-        img {
-            object-fit: cover;
-            width: 100%;
-        }
-    }
+	@media (max-width: 768px) {
+		.profile-photo {
+			width: 150px;
+			height: 150px;
+		}
+	}
 </style>

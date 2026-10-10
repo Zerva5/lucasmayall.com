@@ -1,0 +1,8 @@
+build
+.svelte-kit
+.resume-build
+node_modules
+package-lock.json
+
+# Binary assets — Prettier has nothing to do with these.
+*.{jpg,jpeg,png,gif,webp,avif,ico,pdf,woff,woff2}

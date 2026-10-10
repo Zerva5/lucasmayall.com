@@ -1,40 +1,51 @@
 <script lang="ts">
-    export let href: string;
-    export let alt: string;
+	import type { Snippet } from "svelte";
+
+	let { href, label, children }: { href: string; label: string; children?: Snippet } = $props();
+
+	const isExternal = href.startsWith("http") || href.startsWith("mailto:");
 </script>
 
-<a {href} target="_blank" rel="noopener noreferrer">
-    <slot />
+<a
+	{href}
+	aria-label={label}
+	title={label}
+	{...isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {}}
+>
+	{@render children?.()}
 </a>
 
 <style lang="scss">
-    @use "/src/style/root.scss";
+	a {
+		display: flex;
+		box-sizing: border-box;
+		align-items: center;
+		justify-content: center;
+		padding: 0.125rem;
+		/* Explicit size rather than a percentage, so the button doesn't depend
+		   on a parent having a definite height. */
+		width: 2.5rem;
+		height: 2.5rem;
+		flex-shrink: 0;
 
-    a {
-        display: flex;
-        box-sizing: border-box;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid var(--primary);
-        padding: 0.125rem;
-        // width: ;
-        height: 75%;
-        aspect-ratio: 1;
+		/* Both colours are parameters so the button works on the blue nav bar as
+		   easily as on a white background. A caller sets --social-fg (and
+		   optionally --social-hover-fg) on an ancestor; the defaults suit white. */
+		color: var(--social-fg, var(--primary));
+		border: 3px solid var(--social-fg, var(--primary));
 
-        color: #337ccf;
+		transition:
+			color 0.3s,
+			background-color 0.3s;
 
-        transition:
-            color 0.3s,
-            background-color 0.3s;
+		&:hover {
+			background-color: var(--social-fg, var(--primary));
+			color: var(--social-hover-fg, white);
+		}
 
-        &:hover {
-            color: white;
-            background-color: var(--primary);
-        }
-    }
-
-    div {
-        width: 2rem;
-        height: 2rem;
-    }
+		&:focus-visible {
+			outline: 2px solid var(--social-fg, var(--primary));
+			outline-offset: 2px;
+		}
+	}
 </style>

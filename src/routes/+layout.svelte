@@ -1,26 +1,28 @@
 <script>
 	import NavBar from "$lib/components/nav/NavBar.svelte";
 	import NavBarItem from "$lib/components/nav/NavBarItem.svelte";
+	import { NAV_LINKS } from "$lib/site";
 	import "./styles.scss";
+
+	let { children } = $props();
 </script>
 
-<div>
+<div class="shell">
 	<NavBar>
-		<NavBarItem url="/">Home</NavBarItem>
-		<NavBarItem url="/resume">Resume</NavBarItem>
-		<NavBarItem url="/photos">Photos</NavBarItem>
+		{#each NAV_LINKS as link (link.href)}
+			<NavBarItem url={link.href}>{link.label}</NavBarItem>
+		{/each}
 	</NavBar>
 
 	<main>
-		<slot />
+		{@render children()}
 	</main>
+
 	<footer>Last update {import.meta.env.VITE_LAST_UPDATE}</footer>
 </div>
 
 <style lang="scss">
-	@use "/src/style/root.scss";
-
-	div {
+	.shell {
 		background-color: var(--primary);
 		display: flex;
 		flex-direction: column;
@@ -29,18 +31,13 @@
 
 	main {
 		flex: 1;
-		// display: flex;
-		// flex-direction: column;
-		// padding: 1rem;
-		// max-width: 64rem;
-		// margin: 0 auto;
 		box-sizing: border-box;
 		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
-
-		width: 100vw;
-		// margin: 1rem;
+		// `width: 100%` rather than `100vw` -- 100vw includes the scrollbar
+		// width and causes a horizontal scrollbar.
+		width: 100%;
 	}
 
 	footer {
